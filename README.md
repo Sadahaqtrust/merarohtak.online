@@ -1,37 +1,22 @@
-# merarohtak.online
+# Selero
 
-**Mera Rohtak — Online Community Services (Web App)**
+**Selero — Open-source Monolithic E-commerce Platform**
 
-A youth-centric open-source platform to support social service, education, and opportunities.  
-This repository contains the web application for Mera Rohtak online — the first stage of the project.
+Selero is a youth-friendly, open-source monolithic e-commerce platform to start an online marketplace and community services. This repo contains the web application (frontend + monolithic backend in one codebase) for quick MVP launches.
 
----
+## Goal
+Bootstrap an extensible monolith for marketplace, product management, orders, payments integration, and community features (events, volunteering, training).
 
-## 🚀 Quick overview
-**Project:** Mera Rohtak online community services  
-**Scope:** Web app (frontend + optional backend later)  
-**Goal:** Provide tools and resources for youth — education, health, food drives, volunteering, and local opportunities.
+## Tech (recommended starter)
+- Frontend: React (Vite) or Next.js
+- Backend: Node.js + Express (or an integrated Next.js API)
+- DB: PostgreSQL / SQLite for local dev
+- Auth: Supabase Auth / Firebase / custom JWT
+- Hosting: Vercel (frontend) + Railway/Render/Heroku (backend) or single fullstack platform
 
----
-
-## 🧭 Built with (recommended)
-- React (Vite) or plain HTML/CSS/JS (starter config below)
-- Node.js / npm or pnpm for build scripts
-- Optional: Tailwind CSS, Firebase or Supabase (auth + DB), Netlify/Vercel for hosting
-
----
-
-## 🛠️ Getting started (recommended using Vite + React)
-
-### Prerequisites
-- Node.js (16+)
-- npm or pnpm
-
-### Create project (one-time, local)
+## Quick start (Vite + Express monolith example)
+1. Clone repo:
 ```bash
-# using npm (Vite + React)
-npm create vite@latest merarohtak.online -- --template react
+git clone git@github.com:<your-username>/selero.git
+cd selero
 
-cd merarohtak.online
-npm install
-npm run dev
