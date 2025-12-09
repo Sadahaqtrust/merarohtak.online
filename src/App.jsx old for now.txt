@@ -1,0 +1,173 @@
+import { useState } from "react";
+import "./index.css";
+
+const TEXT = {
+  hi: {
+    titleBar: "मेरा रोहतक ऑनलाइन",
+    title: "साड़ा हक़ परिवार का सदस्य बनें",
+    subtitle: "शहर, सेवा और युवाओं के लिए डिजिटल प्रयास।",
+    phoneOrEmail: "मोबाइल / ईमेल",
+    password: "पासवर्ड",
+    confirmPassword: "कन्फ़र्म पासवर्ड",
+    join: "साड़ा हक़ परिवार का सदस्य बनें",
+    alreadyMember: "पहले से सदस्य हैं? लॉगिन करें",
+    hiLabel: "हिन्दी",
+    enLabel: "English",
+  },
+  en: {
+    titleBar: "Mera Rohtak Online",
+    title: "Become a SadaHaq Family Member",
+    subtitle: "A digital effort for youth, city & service.",
+    phoneOrEmail: "Mobile / Email",
+    password: "Password",
+    confirmPassword: "Confirm Password",
+    join: "Become a SadaHaq Family Member",
+    alreadyMember: "Already a member? Login",
+    hiLabel: "Hindi",
+    enLabel: "English",
+  },
+};
+
+export default function App() {
+  const [lang, setLang] = useState("hi");
+  const t = (key) => TEXT[lang][key];
+
+  const [form, setForm] = useState({
+    phoneOrEmail: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleJoinClick = () => {
+    console.log("Join clicked", form);
+    // later: registration API
+  };
+
+  const handleLoginClick = async () => {
+    console.log("Login button clicked", form);
+
+    if (!form.phoneOrEmail || !form.password) {
+      alert("Please enter Mobile/Email and Password to login.");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: form.phoneOrEmail,
+          password: form.password,
+        }),
+      });
+
+      const data = await res.json();
+      console.log("Login API response:", data);
+
+      if (!res.ok) {
+        alert(data.message || "Login failed");
+        return;
+      }
+
+      alert("Login successful");
+      // TODO: redirect to dashboard page
+    } catch (err) {
+      console.error("Login error:", err);
+      alert("Server error while logging in");
+    }
+  };
+
+  return (
+    <div className="mr-root">
+      {/* TOP BAR */}
+      <header className="mr-topbar">
+        <span className="mr-logo">{t("titleBar")}</span>
+
+        <div className="mr-lang-toggle">
+          <button
+            className={`mr-lang-btn ${lang === "hi" ? "mr-lang-active" : ""}`}
+            onClick={() => setLang("hi")}
+          >
+            {TEXT.hi.hiLabel}
+          </button>
+          <button
+            className={`mr-lang-btn ${lang === "en" ? "mr-lang-active" : ""}`}
+            onClick={() => setLang("en")}
+          >
+            {TEXT.en.enLabel}
+          </button>
+        </div>
+      </header>
+
+      {/* MAIN CARD */}
+      <main className="mr-main">
+        <div className="mr-card">
+          <h2>{t("title")}</h2>
+          <p className="mr-tagline">{t("subtitle")}</p>
+
+          <form className="mr-form" onSubmit={(e) => e.preventDefault()}>
+            <label>
+              {t("phoneOrEmail")}
+              <input
+                type="text"
+                className="mr-input"
+                name="phoneOrEmail"
+                value={form.phoneOrEmail}
+                onChange={handleChange}
+              />
+            </label>
+
+            <label>
+              {t("password")}
+              <input
+                type="password"
+                className="mr-input"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+              />
+            </label>
+
+            <label>
+              {t("confirmPassword")}
+              <input
+                type="password"
+                className="mr-input"
+                name="confirmPassword"
+                value={form.confirmPassword}
+                onChange={handleChange}
+              />
+            </label>
+          </form>
+
+          {/* BUTTON ROW: PRIMARY (ORANGE) + SECONDARY (GREEN) */}
+          <div className="mr-actions">
+            <button
+              type="button"
+              className="mr-btn mr-btn-primary"
+              onClick={handleJoinClick}
+            >
+              {t("join")}
+            </button>
+            <button
+              type="button"
+              className="mr-btn mr-btn-secondary"
+              onClick={handleLoginClick}
+            >
+              {t("alreadyMember")}
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <footer className="mr-footer">
+        © 2025 Mera Rohtak – Youth + City + Seva
+      </footer>
+    </div>
+  );
+}
