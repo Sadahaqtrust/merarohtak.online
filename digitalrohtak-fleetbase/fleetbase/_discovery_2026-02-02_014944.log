@@ -1,0 +1,695 @@
+===== FLEETBASE DISCOVERY START =====
+Mon Feb  2 01:49:44 IST 2026
+BASE PATH: /home/tandonvijay2016/digitalrohtak/fleetbase
+
+---- SYSTEM ----
+Linux merarohtak-online-food-delivery-prod-gcp 6.14.0-1021-gcp #22~24.04.1-Ubuntu SMP Sat Nov 22 06:23:18 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.3 LTS
+Release:	24.04
+Codename:	noble
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       193G   37G  157G  19% /
+tmpfs           8.2G   71M  8.1G   1% /dev/shm
+tmpfs           3.3G  1.8M  3.3G   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+efivarfs         56K   24K   27K  48% /sys/firmware/efi/efivars
+/dev/sda16      881M   48M  772M   6% /boot
+/dev/sda15      105M  6.2M   99M   6% /boot/efi
+tmpfs           1.7G   92K  1.7G   1% /run/user/112
+tmpfs           1.7G  100K  1.7G   1% /run/user/1001
+               total        used        free      shared  buff/cache   available
+Mem:            16Gi       3.2Gi        10Gi       160Mi       3.3Gi        13Gi
+Swap:             0B          0B          0B
+
+---- DOCKER ----
+/usr/bin/docker
+Docker version 28.2.2, build 28.2.2-0ubuntu1~24.04.1
+Client:
+ Version:    28.2.2
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  compose: Docker Compose (Docker Inc.)
+    Version:  v5.0.2
+    Path:     /usr/local/lib/docker/cli-plugins/docker-compose
+
+Server:
+ Containers: 8
+  Running: 5
+  Paused: 0
+  Stopped: 3
+ Images: 14
+ Server Version: 28.2.2
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Using metacopy: false
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: systemd
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ CDI spec directories:
+  /etc/cdi
+  /var/run/cdi
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 
+ runc version: 
+ init version: 
+ Security Options:
+
+---- RUNNING CONTAINERS ----
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED        STATUS                      PORTS                                                    NAMES
+8e05c91896c7   fleetbase/fleetbase-api:latest        "docker-php-entrypoi…"   44 hours ago   Up 15 minutes (unhealthy)   80/tcp, 443/tcp, 2019/tcp, 443/udp                       fleetbase-scheduler-1
+0cc432db9b87   fleetbase/fleetbase-api:latest        "docker-php-entrypoi…"   44 hours ago   Up 15 minutes (healthy)     80/tcp, 443/tcp, 2019/tcp, 443/udp                       fleetbase-queue-1
+7f0b29534984   mysql:8.0-oracle                      "docker-entrypoint.s…"   44 hours ago   Up 15 minutes (healthy)     0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp   fleetbase-database-1
+b4efc9bf6e5a   socketcluster/socketcluster:v17.4.0   "docker-entrypoint.s…"   44 hours ago   Up 15 minutes               0.0.0.0:38000->8000/tcp, [::]:38000->8000/tcp            fleetbase-socket-1
+990b68c2cf63   redis:4-alpine                        "docker-entrypoint.s…"   44 hours ago   Up 15 minutes (healthy)     6379/tcp                                                 fleetbase-cache-1
+
+---- ALL CONTAINERS ----
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED        STATUS                      PORTS                                                    NAMES
+e6d769f5794d   fleetbase-httpd                       "/docker-entrypoint.…"   44 hours ago   Exited (0) 43 hours ago                                                              fleetbase-httpd-1
+3c5c0370c07d   fleetbase/fleetbase-api:latest        "docker-php-entrypoi…"   44 hours ago   Exited (1) 44 hours ago                                                              fleetbase-application-1
+8e05c91896c7   fleetbase/fleetbase-api:latest        "docker-php-entrypoi…"   44 hours ago   Up 15 minutes (unhealthy)   80/tcp, 443/tcp, 2019/tcp, 443/udp                       fleetbase-scheduler-1
+0cc432db9b87   fleetbase/fleetbase-api:latest        "docker-php-entrypoi…"   44 hours ago   Up 15 minutes (healthy)     80/tcp, 443/tcp, 2019/tcp, 443/udp                       fleetbase-queue-1
+7f0b29534984   mysql:8.0-oracle                      "docker-entrypoint.s…"   44 hours ago   Up 15 minutes (healthy)     0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp   fleetbase-database-1
+b4efc9bf6e5a   socketcluster/socketcluster:v17.4.0   "docker-entrypoint.s…"   44 hours ago   Up 15 minutes               0.0.0.0:38000->8000/tcp, [::]:38000->8000/tcp            fleetbase-socket-1
+3a3597303d38   fleetbase/fleetbase-console:latest    "/docker-entrypoint.…"   44 hours ago   Exited (0) 43 hours ago                                                              fleetbase-console-1
+990b68c2cf63   redis:4-alpine                        "docker-entrypoint.s…"   44 hours ago   Up 15 minutes (healthy)     6379/tcp                                                 fleetbase-cache-1
+
+---- DOCKER COMPOSE FILES ----
+/home/tandonvijay2016/digitalrohtak/fleetbase/docker-compose.yml
+
+---- CONTAINER DETAILS ----
+### fleetbase-httpd-1
+
+Image=fleetbase-httpd
+Cmd=[nginx -g daemon off;]
+Entrypoint=[/docker-entrypoint.sh]
+Env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin NGINX_VERSION=1.28.1 PKG_RELEASE=1 DYNPKG_RELEASE=1 NJS_VERSION=0.9.4 NJS_RELEASE=1 ACME_VERSION=0.3.1 NGINX_APPLICATION_HOSTNAME=application 
+Ports={}
+Mounts=[]
+Restart=no
+
+
+### fleetbase-application-1
+
+Image=fleetbase/fleetbase-api:latest
+Cmd=[sh -c php artisan octane:frankenphp --max-requests=1000 --port=8000 --host=0.0.0.0]
+Entrypoint=[docker-php-entrypoint]
+Env=QUEUE_CONNECTION=redis REGISTRY_PREINSTALLED_EXTENSIONS=true CACHE_DRIVER=redis BROADCAST_DRIVER=socketcluster ENVIRONMENT=development LOG_CHANNEL=daily REGISTRY_HOST=https://registry.fleetbase.io MAIL_FROM_NAME=Fleetbase CACHE_PATH=/fleetbase/api/storage/framework/cache SESSION_DOMAIN=localhost DATABASE_URL=mysql://root@database/fleetbase APP_NAME=Fleetbase CACHE_URL=tcp://cache OSRM_HOST=https://router.project-osrm.org REDIS_URL=tcp://cache PATH=/root/.pnpm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c PHP_INI_DIR=/usr/local/etc/php PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 PHP_LDFLAGS=-Wl,-O1 -pie GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC PHP_VERSION=8.2.30 PHP_URL=https://www.php.net/distributions/php-8.2.30.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.30.tar.xz.asc PHP_SHA256=bc90523e17af4db46157e75d0c9ef0b9d0030b0514e62c26ba7b513b8c4eb015 XDG_CONFIG_HOME=/config XDG_DATA_HOME=/data GODEBUG=cgocheck=0 PNPM_HOME=/root/.pnpm CADDYFILE_PATH=/fleetbase/Caddyfile CONSOLE_PATH=/fleetbase/console OCTANE_SERVER=frankenphp FLEETBASE_VERSION=0.7.26 APP_ENV=production 
+Ports={}
+Mounts=[{"Type":"bind","Source":"/home/tandonvijay2016/digitalrohtak/fleetbase/api/.env","Destination":"/fleetbase/api/.env","Mode":"rw","RW":true,"Propagation":"rprivate"}]
+Restart=no
+
+
+### fleetbase-scheduler-1
+
+Image=fleetbase/fleetbase-api:latest
+Cmd=[go-crond --verbose root:./crontab]
+Entrypoint=[docker-php-entrypoint]
+Env=QUEUE_CONNECTION=redis CACHE_DRIVER=redis CACHE_PATH=/fleetbase/api/storage/framework/cache CACHE_URL=tcp://cache REDIS_URL=tcp://cache DATABASE_URL=mysql://root@database/fleetbase PATH=/root/.pnpm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c PHP_INI_DIR=/usr/local/etc/php PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 PHP_LDFLAGS=-Wl,-O1 -pie GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC PHP_VERSION=8.2.30 PHP_URL=https://www.php.net/distributions/php-8.2.30.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.30.tar.xz.asc PHP_SHA256=bc90523e17af4db46157e75d0c9ef0b9d0030b0514e62c26ba7b513b8c4eb015 XDG_CONFIG_HOME=/config XDG_DATA_HOME=/data GODEBUG=cgocheck=0 PNPM_HOME=/root/.pnpm LOG_CHANNEL=stdout BROADCAST_DRIVER=socketcluster CADDYFILE_PATH=/fleetbase/Caddyfile CONSOLE_PATH=/fleetbase/console OCTANE_SERVER=frankenphp FLEETBASE_VERSION=0.7.26 APP_ENV=production 
+Ports={"2019/tcp":null,"443/tcp":null,"443/udp":null,"80/tcp":null}
+Mounts=[]
+Restart=unless-stopped
+
+
+### fleetbase-queue-1
+
+Image=fleetbase/fleetbase-api:latest
+Cmd=[php artisan queue:work]
+Entrypoint=[docker-php-entrypoint]
+Env=QUEUE_CONNECTION=redis CACHE_DRIVER=redis CACHE_PATH=/fleetbase/api/storage/framework/cache CACHE_URL=tcp://cache REDIS_URL=tcp://cache DATABASE_URL=mysql://root@database/fleetbase PATH=/root/.pnpm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c PHP_INI_DIR=/usr/local/etc/php PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 PHP_LDFLAGS=-Wl,-O1 -pie GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC PHP_VERSION=8.2.30 PHP_URL=https://www.php.net/distributions/php-8.2.30.tar.xz PHP_ASC_URL=https://www.php.net/distributions/php-8.2.30.tar.xz.asc PHP_SHA256=bc90523e17af4db46157e75d0c9ef0b9d0030b0514e62c26ba7b513b8c4eb015 XDG_CONFIG_HOME=/config XDG_DATA_HOME=/data GODEBUG=cgocheck=0 PNPM_HOME=/root/.pnpm LOG_CHANNEL=stdout BROADCAST_DRIVER=socketcluster CADDYFILE_PATH=/fleetbase/Caddyfile CONSOLE_PATH=/fleetbase/console OCTANE_SERVER=frankenphp FLEETBASE_VERSION=0.7.26 APP_ENV=production 
+Ports={"2019/tcp":null,"443/tcp":null,"443/udp":null,"80/tcp":null}
+Mounts=[]
+Restart=unless-stopped
+
+
+### fleetbase-database-1
+
+Image=mysql:8.0-oracle
+Cmd=[mysqld]
+Entrypoint=[docker-entrypoint.sh]
+Env=MYSQL_ALLOW_EMPTY_PASSWORD=yes MYSQL_DATABASE=fleetbase PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin GOSU_VERSION=1.19 MYSQL_MAJOR=8.0 MYSQL_VERSION=8.0.45-1.el9 MYSQL_SHELL_VERSION=8.0.45-1.el9 
+Ports={"3306/tcp":[{"HostIp":"0.0.0.0","HostPort":"3306"},{"HostIp":"::","HostPort":"3306"}],"33060/tcp":null}
+Mounts=[{"Type":"bind","Source":"/home/tandonvijay2016/digitalrohtak/fleetbase/docker/database/mysql","Destination":"/var/lib/mysql","Mode":"rw","RW":true,"Propagation":"rprivate"},{"Type":"bind","Source":"/home/tandonvijay2016/digitalrohtak/fleetbase/docker/database","Destination":"/docker-entrypoint-initdb.d","Mode":"rw","RW":true,"Propagation":"rprivate"}]
+Restart=unless-stopped
+
+
+### fleetbase-socket-1
+
+Image=socketcluster/socketcluster:v17.4.0
+Cmd=[npm run start:docker]
+Entrypoint=[docker-entrypoint.sh]
+Env=SOCKETCLUSTER_WORKERS=10 SOCKETCLUSTER_BROKERS=10 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin NODE_VERSION=18.15.0 YARN_VERSION=1.22.19 
+Ports={"8000/tcp":[{"HostIp":"0.0.0.0","HostPort":"38000"},{"HostIp":"::","HostPort":"38000"}]}
+Mounts=[]
+Restart=unless-stopped
+
+
+### fleetbase-console-1
+
+Image=fleetbase/fleetbase-console:latest
+Cmd=[nginx -g daemon off;]
+Entrypoint=[/docker-entrypoint.sh]
+Env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin NGINX_VERSION=1.29.4 PKG_RELEASE=1 DYNPKG_RELEASE=1 NJS_VERSION=0.9.4 NJS_RELEASE=1 ACME_VERSION=0.3.1 
+Ports={}
+Mounts=[{"Type":"bind","Source":"/home/tandonvijay2016/digitalrohtak/fleetbase/console/fleetbase.config.json","Destination":"/usr/share/nginx/html/fleetbase.config.json","Mode":"rw","RW":true,"Propagation":"rprivate"}]
+Restart=no
+
+
+### fleetbase-cache-1
+
+Image=redis:4-alpine
+Cmd=[redis-server]
+Entrypoint=[docker-entrypoint.sh]
+Env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin REDIS_VERSION=4.0.14 REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-4.0.14.tar.gz REDIS_DOWNLOAD_SHA=1e1e18420a86cfb285933123b04a82e1ebda20bfb0a289472745a087587e93a7 
+Ports={"6379/tcp":null}
+Mounts=[{"Type":"volume","Name":"c67186229d8139dc116d93d229d276034ff10e6766b6415130383273c16fcb76","Source":"/var/lib/docker/volumes/c67186229d8139dc116d93d229d276034ff10e6766b6415130383273c16fcb76/_data","Destination":"/data","Driver":"local","Mode":"","RW":true,"Propagation":""}]
+Restart=unless-stopped
+
+
+---- NETWORKS ----
+NETWORK ID     NAME                          DRIVER    SCOPE
+acf745ce5d02   bridge                        bridge    local
+1bc027b450d0   fleetbase-clean_default       bridge    local
+9be9e35ce998   fleetbase_default             bridge    local
+ecc657274969   fleetbase_fleetbase_default   bridge    local
+61254304535a   host                          host      local
+676bac8b5ca5   none                          null      local
+[
+    {
+        "Name": "bridge",
+        "Id": "acf745ce5d0295e92a445a8a668e55bdbefc19235f34d535cdff24ab1eddb2fa",
+        "Created": "2026-02-02T01:33:57.941907371+05:30",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.17.0.0/16",
+                    "Gateway": "172.17.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {
+            "com.docker.network.bridge.default_bridge": "true",
+            "com.docker.network.bridge.enable_icc": "true",
+            "com.docker.network.bridge.enable_ip_masquerade": "true",
+            "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+            "com.docker.network.bridge.name": "docker0",
+            "com.docker.network.driver.mtu": "1500"
+        },
+        "Labels": {}
+    }
+]
+
+---- VOLUMES ----
+DRIVER    VOLUME NAME
+local     1f2c9f5e9ea39a918f6276007c9d4d9651c34d271566ea262cd8cf22b1758240
+local     2d737a7cbc725ee4d3a80df6930d8d647fbd7fde9fbb19a23d8b1979eaa747ef
+local     2da4eea6690cd4f9f41f5a54afb26ef212321e743422506a3f7f711af6a7e0e8
+local     2dfb3d347e5e349c298e8555b0a63e8b3be10c29696bc843db298a06cc42ca16
+local     2fe3d21c47a450fdb7eee50f4909c9d7aa9d6e6765c988a948896a03156e50d5
+local     2ffd7067d9450767086b3ac9c3af61a20e66f30998acd0ab6195ab032e3486f4
+local     3c60ef80b9bcab309153619858ce61acc72adf70ddbe71607e8bf872d5af50e3
+local     4eaeea9dec9e537ebf4d567e5291786ea3edd6e8d079622eea699343b92c7f81
+local     5c69a9c7986274e57a1bdd17bc02e55f869536fd4482c2dc5a51bb026fc479ba
+local     5cd9b032b7043f5b1f3a4ffadcbc8bbe1848435f95f8cb3183d8fccd0afa4b1c
+local     5d269144bea26503e3ed3577678ee525be89f77d14aab51af7d0a23bc58154a6
+local     5e5e2c789e51dfad2e64e2244ce8e299b8102c8c95403390d5b9fde9bc138899
+local     5ede0199600fc6840a7e8b8ff9aaffe66197b1e5b5218c1a4f080b3425ef7f4f
+local     06a48f7623491cd525efde6ea2c96560c06fb52b3c5a7231b7654f27a97db632
+local     7fbdf429dd293ffb4b894c02706b5aababaa63287914f828709b99ed45ba2fb6
+local     9e549234b5b68e374964f16dd4ac376c900dde2458d8ce9f05c3fefc984e924e
+local     025a650535e14af86697de5ae2b8f1e778758a166917b8dde25ec75d86d42f9c
+local     49b52b26ec5e5c66e6ca0198c14b6370612e2db7c386b45cca7d29cdb286ba99
+local     72da59f5a8d708f07bbf1f02b4fd41faa517b74f87433c5f310bda79b565b295
+local     84ccd8ebc20bb0f937825d78e2a7c79c1829d3a2f4c081c4f0a3230dd511c16e
+local     87cce83fc7e0354d6f9570dc08909b38ff2b220665f10475590c05a6edae5866
+local     92d7cc8f63e2d83e374d5ae65ddfc1fecfbae210d329177936833976d49a6968
+local     97ba0bc8f914e3e59b71b2b5736f46d50b2e3f4d82c0300baa944a5b25a46253
+local     128f443dad6512796c10e705e16c1fa7e4560a048e3555248a6d2c19d42c08be
+local     359b1caed6f59418d014e368e2860cbcb69bbcaba46c24c70e956429f79c4c6a
+local     747baeb7f49d4b89dec71b1a1885651742963ae023a7b85417643c97654be3c0
+local     861af4b16191db6931acfebc3dfc9a0dd26ad23f639243705cab861cf91848f3
+local     5119dd8626d583ffd42a8adbf3798adc7934d2865e0cb42ad53535070275a724
+local     24052ccbb56cb48f8c45e54546ec417400b26cc70c50df7345f28cf411a7d36d
+local     34804cdb08a873066913f1548386374de1640698e29205db92dee4830af1f4e3
+local     45228b93e3a6f3ad3de0464225dfff1f4efbbef72fe81bada64f569793e36c64
+local     940339e3990cb675330979e44988b2c980d7531f9e7f94b15565b03ba85b528f
+local     3274957a6287f3e58c2f5dafda26349aabc975c4f0734f095f90af23c51a965a
+local     a4edfec21598ca37814a45a744da2a05ab266a4e23516932f2a3e9e99344089a
+local     a24ac2d65120868990ad8da0ed13649af2a372c8ca04de98f608428ef3afb931
+local     ab9e1c23cc06c0627cb4824181550850e71f7c700930b1734ff19531e11488a1
+local     af1b7fd9f383312ad040a9ebedb74d5a4519e36f8458dda527aad657d2f72281
+local     b33d66769ceb48b469babb5cc89c1402813cefaacb49e84ac240ac4e98ce11f8
+local     b778d85ce9a7c31fd9d61f165d1c18674c49016017e19193305e3ce9fa708512
+local     bb1ab8ccb94fa665b1f848abecac731ee4218ef98b66252a403fc21f4ea5e801
+local     bf612ed2c96b8d65b94737d8b0f73d99c67a8062a98f28a583ba569b0f920188
+local     bfb8466f4c52532d8225bb7b213be4427b96a5bee6bdf2777324aec0e80eade9
+local     c31eefc00ca147ee310a2d7a4be53b3f0a286ba9a5636f9d7a3330f2198abfce
+local     c67186229d8139dc116d93d229d276034ff10e6766b6415130383273c16fcb76
+local     ca05aa8591cb9cf14246fbca7df10efde107a3d4d1fee1ba297c43c881229812
+local     d3047ba467119d5ad9b1d438c9b98344b51b0906a224c0c4ff0472981fecea88
+local     d7072249cf6fa5dc9e10627a65d8a6fe88b02ab195e82bd966610d1ca336330a
+local     da35387a9c8eac3ca718df2b680b5145172ccbe874cc835b95d1a31d85196c8d
+local     dd256f9f0a9aefb35ce2651e13eae2af851c6e66744621e26cc3628b7a8151c7
+local     e53bf0b0c6b35717c1ca353c94bf30f11be01ce48b1e7e37cd4b6ce2fe3583e4
+local     ea6e8603062719f2f6189b92b00d373bb35bb12502e871d5c64e4eb7a3ef831e
+local     ea85360e4058fb21561a8ef5ac8a7d823723d071a2d44512c080bda2a20d9cc8
+local     f4f108fffc2731f0aacb15275ab643d6d8693175bc3d73e4fbcb23526f784716
+local     f997c2f69a0c1029a3b70ff4b67ef29def58f58eab5dcb6e9c68d6ea1d2bcdd4
+local     f2239c090cbdf7734d33a0f7062ebfb4290daeda7f10a5aacf87189c9cc9bc59
+local     fleetbase_db
+
+---- FLEETBASE FILE TREE (TOP) ----
+total 3.9M
+drwxrwxr-x 13 tandonvijay2016 tandonvijay2016 4.0K Feb  2 01:49 .
+drwxrwxr-x  3 tandonvijay2016 tandonvijay2016 4.0K Jan 31 05:13 ..
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  390 Jan 30 04:43 .dockerignore
+drwxrwxr-x  8 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:43 .git
+drwxrwxr-x  4 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:43 .github
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  940 Jan 30 04:43 .gitignore
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 1.5K Jan 30 04:43 .gitmodules
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  475 Jan 30 04:43 .s3deploy.yml
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 5.1K Jan 30 04:43 CODE_OF_CONDUCT.md
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 2.3K Jan 30 04:43 CONTRIBUTING.md
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  185 Jan 30 04:43 Caddyfile
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  260 Jan 30 04:43 Caddyfile.console
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  34K Jan 30 04:43 LICENSE.md
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  499 Jan 30 04:43 PULL_REQUEST_TEMPLATE.md
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  15K Jan 30 04:43 README.md
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  838 Jan 30 04:43 RELEASE.md
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 2.7K Jan 30 04:43 SECURITY.md
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 4.9K Jan 30 04:43 TRANSLATING.md
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  19K Feb  2 01:49 _discovery_2026-02-02_014944.log
+drwxrwxr-x 11 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:44 api
+drwxrwxr-x  4 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:43 builds
+drwxrwxr-x 10 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:43 console
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  750 Jan 30 04:43 create-erd.sh
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016  74K Jan 30 04:43 database.mmd
+drwxrwxr-x  4 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:43 docker
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 2.2K Jan 30 04:43 docker-bake.hcl
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 1.1K Jan 30 04:43 docker-compose.override.yml.example
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 3.2K Jan 30 04:43 docker-compose.yml
+drwxrwxr-x  2 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:43 docs
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 2.4M Jan 30 04:43 erd-dark.svg
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 1.3M Jan 30 04:43 erd.svg
+drwxrwxr-x  3 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:43 infra
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016 1.5K Jan 30 04:43 mermaid.py
+-rw-rw-r--  1 tandonvijay2016 tandonvijay2016   29 Jan 30 04:43 mmdc.json
+drwxrwxr-x 14 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:43 packages
+drwxrwxr-x  2 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:43 scripts
+drwxrwxr-x  2 tandonvijay2016 tandonvijay2016 4.0K Jan 30 04:43 workflows
+
+---- ENV FILES ----
+### /home/tandonvijay2016/digitalrohtak/fleetbase/console/environments/.env.development
+API_HOST=*****
+API_NAMESPACE=*****
+SOCKETCLUSTER_PATH=*****
+SOCKETCLUSTER_HOST=*****
+SOCKETCLUSTER_SECURE=*****
+SOCKETCLUSTER_PORT=*****
+OSRM_HOST=*****### /home/tandonvijay2016/digitalrohtak/fleetbase/console/environments/.env.production
+API_HOST=*****
+API_NAMESPACE=*****
+API_SECURE=*****
+SOCKETCLUSTER_PATH=*****
+SOCKETCLUSTER_HOST=*****
+SOCKETCLUSTER_SECURE=*****
+SOCKETCLUSTER_PORT=*****
+OSRM_HOST=*****### /home/tandonvijay2016/digitalrohtak/fleetbase/api/.env.example
+APP_NAME=*****
+APP_ENV=*****
+APP_KEY=*****
+APP_DEBUG=*****
+APP_URL=*****
+
+LOG_CHANNEL=*****
+LOG_DEPRECATIONS_CHANNEL=*****
+LOG_LEVEL=*****
+
+DB_CONNECTION=*****
+DB_HOST=*****
+DB_PORT=*****
+DB_DATABASE=*****
+DB_USERNAME=*****
+DB_PASSWORD=*****
+
+BROADCAST_DRIVER=*****
+CACHE_DRIVER=*****
+FILESYSTEM_DRIVER=*****
+QUEUE_CONNECTION=*****
+SESSION_DRIVER=*****
+SESSION_LIFETIME=*****
+
+MEMCACHED_HOST=*****
+
+REDIS_HOST=*****
+REDIS_PASSWORD=*****
+REDIS_PORT=*****
+
+MAIL_MAILER=*****
+MAIL_HOST=*****
+MAIL_PORT=*****
+MAIL_USERNAME=*****
+MAIL_PASSWORD=*****
+MAIL_ENCRYPTION=*****
+MAIL_FROM_ADDRESS=*****
+MAIL_FROM_NAME=*****
+
+AWS_ACCESS_KEY_ID=*****
+AWS_SECRET_ACCESS_KEY=*****
+AWS_DEFAULT_REGION=*****
+AWS_BUCKET=*****
+AWS_USE_PATH_STYLE_ENDPOINT=*****
+
+PUSHER_APP_ID=*****
+PUSHER_APP_KEY=*****
+PUSHER_APP_SECRET=*****
+PUSHER_APP_CLUSTER=*****
+
+MIX_PUSHER_APP_KEY=*****
+MIX_PUSHER_APP_CLUSTER=*****
+
+---- API HEALTH CHECK (LOCAL) ----
+Port 80:
+502
+Port 8080:
+000
+Port 3000:
+000
+Port 8000:
+000
+
+---- LAST 100 LINES OF API CONTAINER LOGS ----
+### fleetbase-scheduler-1
+time=2026-02-01T20:03:59Z level=info msg={"ShowVersion":false,"ShowOnlyVersion":false,"ShowHelp":false,"Cron":{"DefaultUser":"root","IncludeCronD":null,"Auto":false,"RunParts":null,"RunParts1m":null,"RunParts15m":null,"RunPartsHourly":null,"RunPartsDaily":null,"RunPartsWeekly":null,"RunPartsMonthly":null,"AllowUnprivileged":false,"WorkDir":"/","EnableUserSwitching":false},"Log":{"Verbose":true,"Json":false},"Server":{"Bind":"","ReadTimeout":5000000000,"WriteTimeout":10000000000,"Metrics":false},"Args":{"Crontabs":["root:./crontab"]}}
+time=2026-02-01T20:03:59Z level=info msg=cronjob added command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:03:59Z level=info msg=start runner with 1 jobs
+
+time=2026-02-01T20:04:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:04:01Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=1.620347533 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:04:01Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:05:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:05:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.61241303 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:05:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:06:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:06:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.531437392 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:06:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:07:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:07:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.552663021 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:07:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:08:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:08:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.587293422 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:08:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:09:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:09:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.55850301 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:09:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:10:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:10:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.529387726 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:10:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:11:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:11:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.561378539 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:11:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:12:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:12:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.546541297 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:12:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:13:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:13:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.580761424 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:13:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:14:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:14:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.56243542 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:14:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:15:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:15:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.5481101 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:15:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:16:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:16:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.542640582 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:16:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:17:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:17:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.527807092 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:17:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:18:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:18:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.539273628 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:18:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+time=2026-02-01T20:19:00Z level=debug msg=executing command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab shell=sh spec=* * * * * user=root
+time=2026-02-01T20:19:00Z level=info msg=finished command=php /fleetbase/api/artisan schedule:run crontab=/fleetbase/api/crontab elapsed_s=0.53252067 exitCode=0 result=success shell=sh spec=* * * * * user=root
+time=2026-02-01T20:19:00Z level=debug msg=
+   INFO  No scheduled commands are ready to run.  
+
+
+
+### fleetbase-queue-1
+
+### fleetbase-database-1
+2026-01-30 23:52:45+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.45-1.el9 started.
+2026-01-30 23:52:46+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2026-01-30 23:52:46+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.45-1.el9 started.
+'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2026-01-30T23:52:47.904747Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2026-01-30T23:52:47.908436Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.45) starting as process 1
+2026-01-30T23:52:47.923594Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-01-30T23:52:48.637670Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-01-30T23:52:49.086823Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2026-01-30T23:52:49.152065Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2026-01-30T23:52:49.225866Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-01-30T23:52:49.225987Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-01-30T23:52:49.232673Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-01-30T23:52:49.287725Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2026-01-30T23:52:49.288218Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.45'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-01-30T23:52:49.642384Z 11 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-01-30T23:52:49.642440Z 8 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-01-31T01:13:57.425239Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.0.45).
+2026-01-31T01:13:58.625926Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.45)  MySQL Community Server - GPL.
+2026-01-31 22:05:05+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.45-1.el9 started.
+2026-01-31 22:05:06+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2026-01-31 22:05:06+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.45-1.el9 started.
+'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2026-01-31T22:05:06.849279Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2026-01-31T22:05:06.853100Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.45) starting as process 1
+2026-01-31T22:05:06.873779Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-01-31T22:05:07.291843Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-01-31T22:05:07.756178Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-01-31T22:05:07.756372Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-01-31T22:05:07.766825Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-01-31T22:05:07.848564Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2026-01-31T22:05:07.849328Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.45'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-01-31T22:05:35.609969Z 11 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-02-01T05:18:48.359135Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.0.45).
+2026-02-01T05:18:49.842613Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.45)  MySQL Community Server - GPL.
+2026-02-01 06:12:25+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.45-1.el9 started.
+2026-02-01 06:12:26+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2026-02-01 06:12:26+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.45-1.el9 started.
+'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2026-02-01T06:12:26.758670Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2026-02-01T06:12:26.763045Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.45) starting as process 1
+2026-02-01T06:12:26.782939Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-02-01T06:12:27.185625Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-02-01T06:12:27.559304Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-02-01T06:12:27.559373Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-02-01T06:12:27.564587Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-02-01T06:12:27.623680Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2026-02-01T06:12:27.623821Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.45'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-02-01T06:12:55.649402Z 11 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-02-01T15:01:56.935821Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.0.45).
+2026-02-01T15:01:57.715524Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.45)  MySQL Community Server - GPL.
+2026-02-01 20:03:59+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.45-1.el9 started.
+2026-02-01 20:03:59+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2026-02-01 20:03:59+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.45-1.el9 started.
+'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2026-02-01T20:04:00.838033Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2026-02-01T20:04:00.841970Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.45) starting as process 1
+2026-02-01T20:04:00.864322Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-02-01T20:04:01.327068Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-02-01T20:04:01.939845Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-02-01T20:04:01.940353Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-02-01T20:04:01.959512Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-02-01T20:04:02.127731Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2026-02-01T20:04:02.130373Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.45'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-02-01T20:04:29.321051Z 11 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+
+### fleetbase-socket-1
+
+> socketcluster-sample@1.0.1 start:docker
+> ./node_modules/nodemon/bin/nodemon.js /usr/src/app/server.js
+
+[33m[nodemon] 2.0.22[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node server.js /usr/src/app/server.js`[39m
+   [32m[Active][0m SocketCluster worker with PID 32 is listening on port 8000
+npm notice 
+npm notice New minor version of npm available! 9.5.0 -> 9.6.3
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.6.3>
+npm notice Run `npm install -g npm@9.6.3` to update!
+npm notice 
+npm ERR! path /usr/src
+npm ERR! command failed
+npm ERR! signal SIGTERM
+npm ERR! command sh -c ./node_modules/nodemon/bin/nodemon.js /usr/src/app/server.js
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2026-01-30T23_52_48_125Z-debug-0.log
+
+> socketcluster-sample@1.0.1 start:docker
+> ./node_modules/nodemon/bin/nodemon.js /usr/src/app/server.js
+
+[33m[nodemon] 2.0.22[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node server.js /usr/src/app/server.js`[39m
+   [32m[Active][0m SocketCluster worker with PID 33 is listening on port 8000
+npm ERR! path /usr/src
+npm ERR! command failed
+npm ERR! signal SIGTERM
+npm ERR! command sh -c ./node_modules/nodemon/bin/nodemon.js /usr/src/app/server.js
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2026-01-31T22_05_07_036Z-debug-0.log
+
+> socketcluster-sample@1.0.1 start:docker
+> ./node_modules/nodemon/bin/nodemon.js /usr/src/app/server.js
+
+[33m[nodemon] 2.0.22[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node server.js /usr/src/app/server.js`[39m
+   [32m[Active][0m SocketCluster worker with PID 31 is listening on port 8000
+npm ERR! path /usr/src
+npm ERR! command failed
+npm ERR! signal SIGTERM
+npm ERR! command sh -c ./node_modules/nodemon/bin/nodemon.js /usr/src/app/server.js
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2026-02-01T06_12_26_951Z-debug-0.log
+
+> socketcluster-sample@1.0.1 start:docker
+> ./node_modules/nodemon/bin/nodemon.js /usr/src/app/server.js
+
+[33m[nodemon] 2.0.22[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node server.js /usr/src/app/server.js`[39m
+   [32m[Active][0m SocketCluster worker with PID 32 is listening on port 8000
+
+### fleetbase-cache-1
+1:C 30 Jan 23:52:45.686 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 30 Jan 23:52:45.686 # Redis version=4.0.14, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 30 Jan 23:52:45.686 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 30 Jan 23:52:45.688 * Running mode=standalone, port=6379.
+1:M 30 Jan 23:52:45.689 # Server initialized
+1:M 30 Jan 23:52:45.689 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 30 Jan 23:52:45.689 * Ready to accept connections
+1:signal-handler (1769822037) Received SIGTERM scheduling shutdown...
+1:M 31 Jan 01:13:57.486 # User requested shutdown...
+1:M 31 Jan 01:13:57.486 * Saving the final RDB snapshot before exiting.
+1:M 31 Jan 01:13:57.490 * DB saved on disk
+1:M 31 Jan 01:13:57.490 # Redis is now ready to exit, bye bye...
+1:C 31 Jan 22:05:05.262 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 31 Jan 22:05:05.262 # Redis version=4.0.14, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 31 Jan 22:05:05.262 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 31 Jan 22:05:05.267 * Running mode=standalone, port=6379.
+1:M 31 Jan 22:05:05.267 # Server initialized
+1:M 31 Jan 22:05:05.267 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 31 Jan 22:05:05.268 * DB loaded from disk: 0.001 seconds
+1:M 31 Jan 22:05:05.268 * Ready to accept connections
+1:signal-handler (1769923128) Received SIGTERM scheduling shutdown...
+1:M 01 Feb 05:18:48.402 # User requested shutdown...
+1:M 01 Feb 05:18:48.403 * Saving the final RDB snapshot before exiting.
+1:M 01 Feb 05:18:48.407 * DB saved on disk
+1:M 01 Feb 05:18:48.408 # Redis is now ready to exit, bye bye...
+1:C 01 Feb 06:12:25.246 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 01 Feb 06:12:25.246 # Redis version=4.0.14, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 01 Feb 06:12:25.246 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 01 Feb 06:12:25.252 * Running mode=standalone, port=6379.
+1:M 01 Feb 06:12:25.252 # Server initialized
+1:M 01 Feb 06:12:25.252 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 01 Feb 06:12:25.253 * DB loaded from disk: 0.001 seconds
+1:M 01 Feb 06:12:25.253 * Ready to accept connections
+1:signal-handler (1769958116) Received SIGTERM scheduling shutdown...
+1:M 01 Feb 15:01:56.939 # User requested shutdown...
+1:M 01 Feb 15:01:56.939 * Saving the final RDB snapshot before exiting.
+1:M 01 Feb 15:01:56.947 * DB saved on disk
+1:M 01 Feb 15:01:56.947 # Redis is now ready to exit, bye bye...
+1:C 01 Feb 20:03:58.924 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 01 Feb 20:03:58.924 # Redis version=4.0.14, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 01 Feb 20:03:58.924 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 01 Feb 20:03:58.934 * Running mode=standalone, port=6379.
+1:M 01 Feb 20:03:58.934 # Server initialized
+1:M 01 Feb 20:03:58.934 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 01 Feb 20:03:58.935 * DB loaded from disk: 0.001 seconds
+1:M 01 Feb 20:03:58.935 * Ready to accept connections
+
+===== DISCOVERY END =====
+[?2004h]0;tandonvijay2016@merarohtak-online-food-delivery-prod-gcp: ~[01;32mtandonvijay2016@merarohtak-online-food-delivery-prod-gcp[00m:[01;34m~[00m$ 

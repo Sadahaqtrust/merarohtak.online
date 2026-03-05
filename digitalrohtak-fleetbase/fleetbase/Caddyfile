@@ -1,0 +1,8 @@
+{
+  admin off
+}
+
+:80 {
+  root * /fleetbase/api/public
+  file_server
+}

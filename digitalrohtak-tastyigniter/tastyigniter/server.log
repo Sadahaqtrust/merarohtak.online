@@ -1,0 +1,297 @@
+nohup: ignoring input
+
+   INFO  Server running on [http://127.0.0.1:8000].  
+
+  Press Ctrl+C to stop the server
+
+  2025-12-22 05:02:10 /admin/dashboard ........................... ~ 500.42ms
+  2025-12-22 05:02:11 /vendor/igniter/images/favicon.svg ........... ~ 0.06ms
+  2025-12-22 05:02:11 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-22 05:02:11 /admin/dashboard ................................. ~ 1s
+  2025-12-22 05:03:30 ............................................... ~ 3m 4s
+  2025-12-22 05:07:51 .............................................. ~ 5m 44s
+  2025-12-22 05:13:36 .............................................. ~ 8m 55s
+  2025-12-22 06:56:52 ............................................... ~ 3m 5s
+  2025-12-22 07:00:22 .............................................. ~ 1m 14s
+  2025-12-22 07:01:36 .............................................. ~ 2m 16s
+  2025-12-22 07:03:52 ............................................... ~ 1m 1s
+  2025-12-22 07:05:52 /admin/dashboard ............................. ~ 0.14ms
+  2025-12-22 07:05:52 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-22 07:05:52 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.14ms
+  2025-12-22 07:05:52 /admin/dashboard ................................. ~ 1s
+  2025-12-22 07:05:54 /admin/orders ................................ ~ 0.13ms
+  2025-12-22 07:05:54 /admin/_assets/8725fa0b0546367e1c117d03266581a8-1766024097.css  ~ 0.05ms
+  2025-12-22 07:05:54 /admin/_assets/de23d79c1cd6e90036cab0c689fdd279-1766024097.js  ~ 0.04ms
+  2025-12-22 07:05:54 /vendor/igniter/images/favicon.svg ........... ~ 0.29ms
+  2025-12-22 07:05:55 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.43ms
+  2025-12-22 07:05:56 /admin/reservations ........................ ~ 500.37ms
+  2025-12-22 07:05:56 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-22 07:05:56 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-22 07:06:00 /admin/customers ............................. ~ 0.14ms
+  2025-12-22 07:06:00 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-22 07:06:00 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-22 07:06:02 /admin/dashboard ............................. ~ 0.12ms
+  2025-12-22 07:06:02 /vendor/igniter/images/favicon.svg ......... ~ 500.39ms
+  2025-12-22 07:06:02 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.06ms
+  2025-12-22 07:06:02 /admin/dashboard ................................. ~ 1s
+  2025-12-22 07:06:04 /admin/orders .............................. ~ 500.37ms
+  2025-12-22 07:06:04 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-22 07:06:04 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:22:49 /admin/ ...................................... ~ 0.14ms
+  2025-12-23 03:22:49 /admin/login ................................. ~ 0.05ms
+  2025-12-23 03:22:49 /admin/dashboard ............................. ~ 0.10ms
+  2025-12-23 03:22:49 /admin/_assets/c95fb7e2bb8c9b8b5e7fc76f837f0264-1766024097.css  ~ 500.43ms
+  2025-12-23 03:22:49 /vendor/igniter/images/favicon.svg ......... ~ 500.89ms
+  2025-12-23 03:22:50 /admin/_assets/38f3f457f5585f10ba151f67247282ee-1766024097.js  ~ 0.34ms
+  2025-12-23 03:22:50 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:22:50 /admin/dashboard ................................. ~ 1s
+  2025-12-23 03:23:07 /admin/settings .................................. ~ 3s
+  2025-12-23 03:23:10 /admin/_assets/087ba82bd6930e229dc466e80b8f0fa7-1766024097.css  ~ 0.08ms
+  2025-12-23 03:23:10 /admin/_assets/46016e588dfcd089f0e580a4ab5b61c2-1766024097.js  ~ 0.05ms
+  2025-12-23 03:23:10 /vendor/igniter/images/favicon.svg ........... ~ 0.14ms
+  2025-12-23 03:23:10 /vendor/igniter/fonts/FontAwesome/fa-brands-400.woff2  ~ 0.05ms
+  2025-12-23 03:23:10 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.14ms
+  2025-12-23 03:23:29 /admin/settings .................................. ~ 2s
+  2025-12-23 03:23:31 /admin/settings .............................. ~ 0.05ms
+  2025-12-23 03:23:31 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:23:31 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.06ms
+  2025-12-23 03:23:31 /vendor/igniter/fonts/FontAwesome/fa-brands-400.woff2  ~ 0.14ms
+  2025-12-23 03:23:41 /admin/countries ............................. ~ 0.13ms
+  2025-12-23 03:23:41 /admin/_assets/8725fa0b0546367e1c117d03266581a8-1766024097.css  ~ 500.39ms
+  2025-12-23 03:23:41 /vendor/igniter/images/favicon.svg ......... ~ 500.57ms
+  2025-12-23 03:23:41 /admin/_assets/de23d79c1cd6e90036cab0c689fdd279-1766024097.js  ~ 0.34ms
+  2025-12-23 03:23:41 /vendor/igniter/fonts/FontAwesome/fa-regular-400.woff2  ~ 0.06ms
+  2025-12-23 03:23:41 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.13ms
+  2025-12-23 03:23:48 /admin/countries ............................. ~ 0.14ms
+  2025-12-23 03:24:07 /admin/settings .............................. ~ 0.14ms
+  2025-12-23 03:24:07 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:24:07 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:24:07 /vendor/igniter/fonts/FontAwesome/fa-brands-400.woff2  ~ 0.13ms
+  2025-12-23 03:24:11 /admin/statuses ............................ ~ 500.37ms
+  2025-12-23 03:24:12 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:24:12 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:25:08 /admin/statuses ............................ ~ 500.39ms
+  2025-12-23 03:25:26 /admin/statuses/edit/9 ..................... ~ 500.38ms
+  2025-12-23 03:25:27 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:25:27 /admin/_assets/5680de4f10cdbd20be30bfe1bc0c7e31-1766024097.js  ~ 0.04ms
+  2025-12-23 03:25:27 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:25:39 /admin/statuses/edit/9 ....................... ~ 0.14ms
+  2025-12-23 03:26:31 /admin/statuses/edit/9 ....................... ~ 0.14ms
+  2025-12-23 03:26:31 /admin/statuses/edit/9 ..................... ~ 500.35ms
+  2025-12-23 03:26:31 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:26:31 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:26:34 /admin/statuses .............................. ~ 0.16ms
+  2025-12-23 03:26:34 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:26:34 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:26:47 /admin/statuses/edit/5 ....................... ~ 0.15ms
+  2025-12-23 03:26:47 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:26:48 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:27:55 /admin/statuses/edit/5 ....................... ~ 0.17ms
+  2025-12-23 03:27:55 /admin/statuses/edit/5 ....................... ~ 0.04ms
+  2025-12-23 03:27:55 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:27:55 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:27:57 /admin/statuses .............................. ~ 0.14ms
+  2025-12-23 03:27:57 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:27:57 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:28:02 /admin/statuses .............................. ~ 0.14ms
+  2025-12-23 03:28:21 /admin/statuses/edit/3 ....................... ~ 0.17ms
+  2025-12-23 03:28:21 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:28:22 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:28:25 /admin/statuses .............................. ~ 0.18ms
+  2025-12-23 03:28:25 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:28:25 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:28:38 /admin/statuses/edit/5 ....................... ~ 0.15ms
+  2025-12-23 03:28:38 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:28:38 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:29:38 /admin/statuses/edit/5 ....................... ~ 0.24ms
+  2025-12-23 03:29:39 /admin/statuses/edit/5 ....................... ~ 0.05ms
+  2025-12-23 03:29:39 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:29:39 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.15ms
+  2025-12-23 03:29:44 /admin/statuses ............................ ~ 500.39ms
+  2025-12-23 03:29:44 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:29:44 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:29:55 /admin/statuses/edit/9 ..................... ~ 500.36ms
+  2025-12-23 03:29:55 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:29:55 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:30:28 /admin/statuses/edit/9 ....................... ~ 0.14ms
+  2025-12-23 03:30:28 /admin/statuses/edit/9 ..................... ~ 500.36ms
+  2025-12-23 03:30:28 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:30:28 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:30:30 /admin/statuses .............................. ~ 0.13ms
+  2025-12-23 03:30:31 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:30:31 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.12ms
+  2025-12-23 03:31:16 /admin/statuses/edit/5 ....................... ~ 0.15ms
+  2025-12-23 03:31:16 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:31:16 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:31:23 /admin/statuses .............................. ~ 0.15ms
+  2025-12-23 03:31:23 /vendor/igniter/images/favicon.svg ........... ~ 0.06ms
+  2025-12-23 03:31:24 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:31:46 /admin/settings ............................ ~ 500.41ms
+  2025-12-23 03:31:46 /vendor/igniter/images/favicon.svg ........... ~ 0.05ms
+  2025-12-23 03:31:46 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.06ms
+  2025-12-23 03:31:46 /vendor/igniter/fonts/FontAwesome/fa-brands-400.woff2  ~ 0.14ms
+  PHP Deprecated:  Intervention\Image\Gd\Driver::__construct(): Implicitly marking parameter $decoder as nullable is deprecated, the explicit nullable type must be used instead in /home/opc/Food-Delivery/vendor/intervention/image/src/Intervention/Image/Gd/Driver.php on line 16
+  PHP Deprecated:  Intervention\Image\Gd\Driver::__construct(): Implicitly marking parameter $encoder as nullable is deprecated, the explicit nullable type must be used instead in /home/opc/Food-Delivery/vendor/intervention/image/src/Intervention/Image/Gd/Driver.php on line 16
+  PHP Deprecated:  Intervention\Image\Image::__construct(): Implicitly marking parameter $driver as nullable is deprecated, the explicit nullable type must be used instead in /home/opc/Food-Delivery/vendor/intervention/image/src/Intervention/Image/Image.php on line 92
+  PHP Deprecated:  Intervention\Image\Size::__construct(): Implicitly marking parameter $pivot as nullable is deprecated, the explicit nullable type must be used instead in /home/opc/Food-Delivery/vendor/intervention/image/src/Intervention/Image/Size.php on line 38
+  PHP Deprecated:  Intervention\Image\Size::resize(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /home/opc/Food-Delivery/vendor/intervention/image/src/Intervention/Image/Size.php on line 105
+  PHP Deprecated:  Intervention\Image\Size::resizeWidth(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /home/opc/Food-Delivery/vendor/intervention/image/src/Intervention/Image/Size.php on line 140
+  PHP Deprecated:  Intervention\Image\Size::resizeHeight(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /home/opc/Food-Delivery/vendor/intervention/image/src/Intervention/Image/Size.php on line 176
+  PHP Deprecated:  Intervention\Image\Size::getConstraint(): Implicitly marking parameter $callback as nullable is deprecated, the explicit nullable type must be used instead in /home/opc/Food-Delivery/vendor/intervention/image/src/Intervention/Image/Size.php on line 364
+  2025-12-23 03:31:50 /admin/settings/edit/general ................. ~ 0.57ms
+  2025-12-23 03:31:50 /admin/_assets/3f5d1d11f80c3194f5f16f16a79f6775-1766024097.css  ~ 500.39ms
+  2025-12-23 03:31:50 /admin/_assets/25eed4fa6ec49a6690f276d83e1b8f64-1766024097.js  ~ 0.05ms
+  2025-12-23 03:31:50 /vendor/igniter/images/favicon.svg ......... ~ 500.66ms
+  2025-12-23 03:31:50 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.34ms
+  2025-12-23 03:34:33 /admin/settings/edit/general ................. ~ 0.15ms
+  2025-12-23 03:34:44 /admin/settings/edit/general ................. ~ 0.13ms
+  2025-12-23 03:34:44 /admin/settings/edit/general ................. ~ 0.04ms
+  2025-12-23 03:36:12 /admin/settings/edit/general ................. ~ 0.15ms
+  2025-12-23 03:37:12 /admin/settings/edit/general ................. ~ 0.15ms
+  2025-12-23 03:37:12 /admin/settings/edit/general ................. ~ 0.05ms
+  2025-12-23 03:37:13 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:43:13 / .......................................... ~ 500.56ms
+  2025-12-23 03:43:13 /_assets/e0fecfd2c1de96a5fe557a71adab68a5-1766024097.css  ~ 0.06ms
+  2025-12-23 03:43:13 /livewire/livewire.js ........................ ~ 0.05ms
+  2025-12-23 03:43:13 /_assets/a6108608d657d000fa23ab5bac0c7c65-1766024097.js  ~ 0.80ms
+  2025-12-23 03:43:18 /livewire/update ........................... ~ 500.38ms
+  2025-12-23 03:43:19 /livewire/update ............................. ~ 0.14ms
+  2025-12-23 03:43:21 /livewire/update ............................. ~ 0.15ms
+  2025-12-23 03:43:22 /livewire/update ................................. ~ 1s
+  2025-12-23 03:43:22 /vendor/igniter-orange/images/powered-by-google.png  ~ 0.06ms
+  2025-12-23 03:43:23 /livewire/update ........................... ~ 500.37ms
+  2025-12-23 03:43:25 /livewire/update ........................... ~ 500.36ms
+  2025-12-23 03:44:38 / ............................................ ~ 0.14ms
+  2025-12-23 03:44:38 .............................................. ~ 1m 56s
+  2025-12-23 03:46:34 /livewire/update ........................... ~ 500.35ms
+  2025-12-23 03:46:35 /vendor/igniter-orange/images/powered-by-google.png  ~ 0.06ms
+  2025-12-23 03:50:45 /admin/locations ........................... ~ 500.39ms
+  2025-12-23 03:50:45 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:50:54 /admin/updates .................................. ~ 47s
+  2025-12-23 03:51:40 /admin/_assets/30f37ded2a5d66bc0460cc422611b4d5-1766024097.js  ~ 0.05ms
+  2025-12-23 03:51:40 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:51:59 /admin/users ............................... ~ 500.39ms
+  2025-12-23 03:51:59 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.06ms
+  2025-12-23 03:52:09 /admin/user_groups ......................... ~ 500.39ms
+  2025-12-23 03:52:09 /admin/_assets/6b98f3450d3cbc022a55ce56e365c171-1766024097.js  ~ 0.04ms
+  2025-12-23 03:52:09 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:52:25 /admin/users ................................. ~ 0.14ms
+  2025-12-23 03:52:25 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 500.41ms
+  2025-12-23 03:52:27 /admin/user_groups ........................... ~ 0.14ms
+  2025-12-23 03:52:27 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:52:34 /admin/users ............................... ~ 500.37ms
+  2025-12-23 03:52:35 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:52:36 /admin/user_roles ............................ ~ 0.14ms
+  2025-12-23 03:52:36 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:52:44 / .......................................... ~ 500.40ms
+  2025-12-23 03:52:44 /register ....................................... ~ 17s
+  2025-12-23 03:53:02 /_assets/57085cdc49d7dabe0cb6db29c4f299ad-1766024097.css  ~ 500.93ms
+  2025-12-23 03:53:02 /_assets/70f62b7e6ce74b14907f8abb0906dd44-1766024097.js  ~ 0.90ms
+  2025-12-23 03:53:02 /vendor/igniter-orange/images/iti/flags.png .. ~ 0.17ms
+  2025-12-23 03:53:35 /admin/extensions ............................ ~ 0.20ms
+  2025-12-23 03:53:35 /admin/_assets/ab0d3887d8bc3ce1b54c3a3de29cfc7f-1766024097.js  ~ 0.04ms
+  2025-12-23 03:53:35 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 03:54:22 /admin/settings .............................. ~ 0.14ms
+  2025-12-23 03:54:22 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 500.38ms
+  2025-12-23 03:54:22 /vendor/igniter/fonts/FontAwesome/fa-brands-400.woff2  ~ 0.05ms
+  2025-12-23 03:54:32 /admin/settings/edit/reservation ............. ~ 0.19ms
+  2025-12-23 03:54:32 /admin/_assets/37ceeef753324bf7d6524b4d7d1a1da2-1766024097.js  ~ 500.37ms
+  2025-12-23 03:54:32 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:54:57 /admin/settings ............................ ~ 500.40ms
+  2025-12-23 03:54:57 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.06ms
+  2025-12-23 03:54:57 /vendor/igniter/fonts/FontAwesome/fa-brands-400.woff2  ~ 0.20ms
+  2025-12-23 03:55:00 /admin/currencies ............................ ~ 0.14ms
+  2025-12-23 03:55:00 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:55:00 /vendor/igniter/fonts/FontAwesome/fa-regular-400.woff2  ~ 0.04ms
+  2025-12-23 03:55:08 /admin/currencies ............................ ~ 0.14ms
+  2025-12-23 03:55:11 /admin/currencies/create ..................... ~ 0.14ms
+  2025-12-23 03:55:11 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 03:59:42 /admin/currencies/create ..................... ~ 0.15ms
+  2025-12-23 04:00:31 /admin/currencies/create ..................... ~ 0.14ms
+  2025-12-23 04:00:31 /admin/currencies/edit/7 ..................... ~ 0.04ms
+  2025-12-23 04:00:31 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 04:00:35 /admin/currencies ............................ ~ 0.15ms
+  2025-12-23 04:00:35 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.06ms
+  2025-12-23 04:00:35 /vendor/igniter/fonts/FontAwesome/fa-regular-400.woff2  ~ 0.15ms
+  2025-12-23 04:00:49 /admin/currencies .......................... ~ 500.41ms
+  2025-12-23 04:00:49 /admin/currencies ............................ ~ 0.05ms
+  2025-12-23 04:00:49 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.06ms
+  2025-12-23 04:00:50 /vendor/igniter/fonts/FontAwesome/fa-regular-400.woff2  ~ 0.14ms
+  2025-12-23 04:01:00 /admin/settings .............................. ~ 0.14ms
+  2025-12-23 04:01:00 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.06ms
+  2025-12-23 04:01:00 /vendor/igniter/fonts/FontAwesome/fa-brands-400.woff2  ~ 0.15ms
+  2025-12-23 04:01:02 /admin/currencies .......................... ~ 500.68ms
+  2025-12-23 04:01:02 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.06ms
+  2025-12-23 04:01:02 /vendor/igniter/fonts/FontAwesome/fa-regular-400.woff2  ~ 0.15ms
+  2025-12-23 04:01:08 /admin/settings ............................ ~ 500.35ms
+  2025-12-23 04:01:08 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.06ms
+  2025-12-23 04:01:08 /vendor/igniter/fonts/FontAwesome/fa-brands-400.woff2  ~ 0.15ms
+  2025-12-23 04:01:12 /admin/settings/edit/general ................. ~ 0.13ms
+  2025-12-23 04:01:12 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 04:01:25 /admin/settings/edit/general ............... ~ 500.38ms
+  2025-12-23 04:02:38 /admin/settings/edit/general ................. ~ 0.15ms
+  2025-12-23 04:02:41 /admin/settings/edit/general ................. ~ 0.13ms
+  2025-12-23 04:02:41 /admin/settings/edit/general ................. ~ 0.14ms
+  2025-12-23 04:02:41 /admin/settings/edit/general ................. ~ 0.07ms
+  2025-12-23 04:02:41 /admin/settings/edit/general ................. ~ 0.05ms
+  2025-12-23 04:02:42 /admin/settings/edit/general ................. ~ 0.15ms
+  2025-12-23 04:02:46 /admin/settings/edit/general ................. ~ 0.18ms
+  2025-12-23 04:03:19 /admin/settings/edit/general ................. ~ 0.15ms
+  2025-12-23 04:03:19 /admin/settings/edit/general ................. ~ 0.04ms
+  2025-12-23 04:03:19 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 500.37ms
+  2025-12-23 04:03:22 /admin/settings .............................. ~ 0.14ms
+  2025-12-23 04:03:23 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 04:03:23 /vendor/igniter/fonts/FontAwesome/fa-brands-400.woff2  ~ 0.04ms
+  2025-12-23 04:03:25 /admin/settings/edit/order ................... ~ 0.13ms
+  2025-12-23 04:03:26 /admin/_assets/bdb1344d6f739679adf19d11f90be7b4-1766024097.js  ~ 0.05ms
+  2025-12-23 04:03:26 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.04ms
+  2025-12-23 04:05:02 /admin/settings/edit/order ................... ~ 0.15ms
+  2025-12-23 04:05:18 /admin/settings/edit/order ................... ~ 0.15ms
+  2025-12-23 04:09:35 /admin/settings/edit/order ................... ~ 0.15ms
+  2025-12-23 04:10:22 /admin/settings/edit/order ................. ~ 500.38ms
+  2025-12-23 04:10:33 /admin/settings/edit/order ................... ~ 0.14ms
+  2025-12-23 04:10:35 /admin/settings/edit/order ................... ~ 0.14ms
+  2025-12-23 04:11:17 /admin/settings/edit/order ................. ~ 500.38ms
+  2025-12-23 04:11:17 /admin/settings/edit/order ................... ~ 0.05ms
+  2025-12-23 04:11:17 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 04:34:59 /admin/extensions .......................... ~ 500.40ms
+  2025-12-23 04:35:00 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 04:35:07 /admin/extensions ............................ ~ 0.15ms
+  2025-12-23 04:35:10 /admin/updates ............................... ~ 0.13ms
+  2025-12-23 04:35:10 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 07:14:09 / .......................................... ~ 500.37ms
+  2025-12-23 07:14:09 /livewire/update ................................. ~ 6s
+  2025-12-23 07:14:16 /vendor/igniter-orange/images/powered-by-google.png  ~ 0.05ms
+  2025-12-23 07:14:17 /livewire/update ............................. ~ 0.14ms
+  2025-12-23 07:14:48 /admin .......................................... ~ 53s
+  2025-12-23 07:15:41 /admin/login ................................. ~ 0.08ms
+  2025-12-23 07:15:41 /admin/dashboard ............................. ~ 0.05ms
+  2025-12-23 07:15:41 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 07:15:41 /admin/dashboard ................................. ~ 1s
+  2025-12-23 07:15:52 /admin/extensions ................................ ~ 4s
+  2025-12-23 07:15:56 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+  2025-12-23 07:15:59 /admin/updates ............................. ~ 500.37ms
+  2025-12-23 07:15:59 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms
+
+   INFO  Environment modified. Restarting server...  
+
+   INFO  Server running on [http://127.0.0.1:8000].  
+
+  Press Ctrl+C to stop the server
+
+  2025-12-23 08:47:17 /admin/updates ............................. ~ 500.43ms
+  2025-12-23 08:47:17 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 500.39ms
+
+   INFO  Environment modified. Restarting server...  
+
+   INFO  Server running on [http://127.0.0.1:8000].  
+
+  Press Ctrl+C to stop the server
+
+  2025-12-23 19:51:00 / ................................................ ~ 1s
+  2025-12-23 19:51:00 /_assets/e0fecfd2c1de96a5fe557a71adab68a5-1766024097.css  ~ 0.07ms
+  2025-12-23 19:51:00 /_assets/a6108608d657d000fa23ab5bac0c7c65-1766024097.js  ~ 0.17ms
+  2025-12-23 22:27:36 /admin/updates ............................... ~ 0.17ms
+  2025-12-23 22:27:36 /admin/_assets/087ba82bd6930e229dc466e80b8f0fa7-1766024097.css  ~ 0.06ms
+  2025-12-23 22:27:36 /admin/_assets/30f37ded2a5d66bc0460cc422611b4d5-1766024097.js  ~ 500.39ms
+  2025-12-23 22:27:37 /vendor/igniter/fonts/FontAwesome/fa-solid-900.woff2  ~ 0.05ms

@@ -1,0 +1,16 @@
+{
+  "api": {
+    "host": "http://digitalrohtak.online",
+    "namespace": "api",
+    "secure": false
+  },
+  "socket": {
+    "host": "digitalrohtak.online",
+    "port": 38000,
+    "secure": false,
+    "path": "/socketcluster/"
+  },
+  "osrm": {
+    "host": "https://router.project-osrm.org"
+  }
+}
